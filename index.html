@@ -890,25 +890,25 @@
       <h3 class="page-title white-text teal">Contact</h3>
 
 
-      <div class="container">
+      <div class="container" id="form-wrapper">
 
-        <form id="contact-form" method="post">
+        <form id="form" method="post">
       
           
 
           <label>Name</label>
-          <input class="input-field" type="text" name="name" placeholder="Your Name Here" required>
+          <input class="input-field" id="name" type="text" name="name" placeholder="Your Name Here" required>
   
           <label>Email</label>
-          <input class="input-field" type="text" name="email" placeholder="Your Email Here" required>
+          <input class="input-field" id="email" type="text" name="email" placeholder="Your Email Here" required>
   
   
           <label>Message</label>
-          <textarea class="input-field" name="suggestion" placeholder="Enter Message" required></textarea>
+          <input class="input-field" id="message" type="text" name="message" placeholder="Enter Message" required>
           
           <br><br>
   
-          <input id="btn btn-primary" type="submit">
+          <input id="btn btn-primary" id="submit" type="submit">
         </form>
 
        
@@ -934,6 +934,42 @@
       </div>
     </section>
   </main>
+  
+  
+<!--  ************************  -->
+  <script type="text/javascript">
+    
+    var form = document.getElementById('form-wrapper')
+    form.addEventListener('submit', function(e){
+      e.preventDefault()
+
+      var url = 'https://smrcontact.herokuapp.com/contact-me/'
+
+      var name = document.getElementById('name').value
+      var email = document.getElementById('email').value
+      var message = document.getElementById('message').value
+
+      fetch(url, {
+      method: 'POST',
+      headers:{
+        'Content-type':'application/json',
+      },
+
+      body:JSON.stringify({'name':name, 'email':email, 'message':message})
+
+    } 
+    ).then(function(response){
+      document.getElementById('form').reset()
+    })
+
+
+    })
+
+    
+
+
+
+  </script>
 
   <!-- typed.js -->
   <script src="assets/vendor/typed.js/typed.min.js"></script>
