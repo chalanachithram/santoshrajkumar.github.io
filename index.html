@@ -890,33 +890,10 @@
       <h3 class="page-title white-text teal">Contact</h3>
 
 
-      <div class="container" id="form-wrapper">
-
-        <form id="form" method="post">
-      
-          
-
-          <label>Name</label>
-          <input class="input-field" id="name" type="text" name="name" placeholder="Your Name Here" required>
-  
-          <label>Email</label>
-          <input class="input-field" id="email" type="text" name="email" placeholder="Your Email Here" required>
-  
-  
-          <label>Message</label>
-          <input class="input-field" id="message" type="text" name="message" placeholder="Enter Message" required>
-          
-          <br><br>
-  
-          <input id="btn btn-primary" id="submit" type="submit">
-        </form>
-
-       
-      </div>
-
-
 
       <div class="container">
+        
+        <a href="https://smrcontact.herokuapp.com/"><button class="btn btn-primary">Click for Contact Form</button></a>
     
         <p>
           <a aria-label="Email Santosh" href="mailto:rajkumar.nits@gmail.com" target="_blank" data-position="top"
@@ -937,40 +914,6 @@
   
   
 <!--  ************************  -->
-  <script type="text/javascript">
-    
-    var form = document.getElementById('form-wrapper')
-    form.addEventListener('submit', function(e){
-      e.preventDefault()
-
-      var url = 'https://smrcontact.herokuapp.com/contact-me/'
-
-      var name = document.getElementById('name').value
-      var email = document.getElementById('email').value
-      var message = document.getElementById('message').value
-
-      fetch(url, {
-      mode: "no-cors",
-      method: 'POST',
-      headers:{
-        'Content-type':'application/json',
-      },
-
-      body:JSON.stringify({'name':name, 'email':email, 'message':message})
-
-    } 
-    ).then(function(response){
-      document.getElementById('form').reset()
-    })
-
-
-    })
-
-    
-
-
-
-  </script>
 
   <!-- typed.js -->
   <script src="assets/vendor/typed.js/typed.min.js"></script>
