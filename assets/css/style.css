@@ -310,8 +310,6 @@ h3 {
 
 .full-height {
   height: 100vh;
-  background: url("https://source.unsplash.com/random/1600x900/") no-repeat center;
-  background-size: cover;
 }
 
 /* Original */
@@ -358,7 +356,8 @@ h3 {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background: url("https://source.unsplash.com/random/1600x900/") no-repeat center;
+  background-size: cover;
   height: 100%;
   left: 0;
   position: absolute;
